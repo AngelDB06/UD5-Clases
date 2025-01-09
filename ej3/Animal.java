@@ -34,6 +34,6 @@ public class Animal {
         animal1.establecernombre("León");
         animal1.establecerpeso(90);
 
-        System.out.println("");
+        System.out.println("El animal es un "+animal1.obtenernombre()+", su edad es de "+animal1.obteneredad()+" años y tiene un peso de "+animal1.obtenerpeso());
     }
 }
