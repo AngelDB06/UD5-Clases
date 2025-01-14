@@ -23,29 +23,35 @@ public class Fraccion {
         return denominador;
     }
 
-    Fraccion Multiplicar(Fraccion fraccion1, Fraccion fraccion2){
-
-        
-        System.out.println("La fracción final es "+fraccion1+"/"+fraccion2);
-        return fraccion1;
-    }
-
-    void Dividir(int n1, int d1, int n2, int d2){
-        int nf, df;
-
-        nf=n1*d2;
-        df=d1*n2;
-
-        System.out.println("La fracción final es "+nf+"/"+df);
-    }
-    public static void main(String[] args) {
-        Fraccion fraccion1=new Fraccion();
-        Fraccion fraccion2=new Fraccion();
+    static Fraccion Multiplicar(Fraccion f1, Fraccion f2){
         Fraccion f3=new Fraccion();
 
-        fraccion1.setFraccion(2, 4);
-        fraccion2.setFraccion(3, 6);
-        f3.Multiplicar(fraccion1, fraccion2);
+        f3.setFraccion(f1.getNumerador()*f2.getNumerador(), f1.getDenominador()*f2.getDenominador());
+
+        return (f3);
+    }
+
+    static Fraccion Dividir(Fraccion f1, Fraccion f2){
+        Fraccion f3=new Fraccion();
+
+        f3.setFraccion(f1.getNumerador()*f2.getDenominador(), f1.getDenominador()*f2.getNumerador());
+
+        return (f3);
+    }
+    public static void main(String[] args) {
+        Fraccion f1=new Fraccion();
+        Fraccion f2=new Fraccion();
+        Fraccion f3=new Fraccion();
+
+        f1.setFraccion(2, 4);
+        f2.setFraccion(3, 6);
+        f3= Fraccion.Multiplicar(f1, f2);
+        
+        System.out.println("El resultado de la multiplicación es "+f3.getNumerador()+"/"+f3.getDenominador());
+
+        f3 = Fraccion.Dividir(f1,f2);
+
+        System.out.println("El resultado de la division es "+f3.getNumerador()+"/"+f3.getDenominador());
 
         
     }
