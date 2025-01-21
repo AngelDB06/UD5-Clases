@@ -22,8 +22,12 @@ public class Pizza {
     }
 
     void sirve(){
-        estado="Servida";
-        servidas=servidas+1;
+        if (estado=="Servida") {
+            System.out.println("esa pizza ya se ha servido");
+        } else {
+            estado="Servida";
+            servidas=servidas+1;
+        }
     }
     
     
