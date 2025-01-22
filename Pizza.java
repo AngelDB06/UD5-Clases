@@ -38,14 +38,20 @@ public class Pizza {
     static int getTotalServidas(){
         return servidas;
     }
+
+    @Override
+    public String toString(){
+        return "pizza "+tipo+", "+tamaño+", "+estado;
+    }
+
     public static void main(String[] args) {
         Pizza p1= new Pizza("margarita", "mediana");
         Pizza p2= new Pizza("funghi", "familiar");
         p2.sirve();
         Pizza p3 = new Pizza("cuatro quesos", "mediana");
-        System.out.println("pizza"+p1.getTipo()+", "+p1.getTamaño()+", "+p1.getEstado());
-        System.out.println("pizza"+p2.getTipo()+", "+p2.getTamaño()+", "+p2.getEstado());
-        System.out.println("pizza"+p3.getTipo()+", "+p3.getTamaño()+", "+p3.getEstado());
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
         p2.sirve();
         System.out.println("pedidas: "+Pizza.getTotalPedidas());
         System.out.println("servidas: "+Pizza.getTotalServidas());
