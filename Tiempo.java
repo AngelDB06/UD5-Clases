@@ -37,17 +37,21 @@ public class Tiempo {
 
     void resta(Tiempo t1, Tiempo t2){
         this.segundos=t1.segundos-t2.segundos;
-        do {
-            this.segundos=this.segundos+this.segundos*2;
-            this.minutos=this.minutos-1;
-        } while (this.segundos<0);
-        
+        this.minutos=0;
+        if (this.segundos<0) {
+            do {
+                this.segundos=this.segundos+60;
+                this.minutos=this.minutos+1;
+            } while (this.segundos<0);
+        }
         this.minutos=t1.minutos-t2.minutos-this.minutos;
-        do {
-            int temp=this.minutos+60;
-            this.horas=this.horas-1;
-            this.minutos=temp;
-        } while (this.segundos<=-60);
+        this.horas=0;
+        if (this.minutos<0) {
+            do {
+                this.minutos=this.minutos+60;
+                this.horas=this.horas+1;
+            } while (this.minutos<0);
+        }
         this.horas=t1.horas-t2.horas-this.horas;
     }
     
@@ -57,7 +61,7 @@ public class Tiempo {
         return horas+"h "+minutos+"m "+segundos+"s ";
     }
     public static void main(String[] args) {
-        Tiempo t1=new Tiempo(2, 58, 59);
+        Tiempo t1=new Tiempo(3, 58, 62);
         Tiempo t2=new Tiempo(3, 1, 61);
         Tiempo t3=new Tiempo(0, 0, 0);
 
