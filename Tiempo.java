@@ -21,17 +21,21 @@ public class Tiempo {
 
     void suma(Tiempo t1, Tiempo t2){
         this.segundos=t1.segundos+t2.segundos;
-        do {
-            int temp=this.segundos-60;
-            this.minutos=this.minutos+1;
-            this.segundos=temp;
-        } while (this.segundos>=60);
+        if (this.segundos>=60) {
+            do {
+                int temp=this.segundos-60;
+                this.minutos=this.minutos+1;
+                this.segundos=temp;
+            } while (this.segundos>=60);
+        }
         this.minutos=t1.minutos+t2.minutos+this.minutos;
-        do {
-            int temp=this.minutos-60;
-            this.horas=this.horas+1;
-            this.minutos=temp;
-        } while (this.segundos>=60);
+        if (this.minutos>=60) {
+            do {
+                this.minutos=this.minutos-60;
+                this.horas=this.horas+1;
+               
+            } while (this.minutos>=60);
+        }
         this.horas=t1.horas+t2.horas+this.horas;
     }
 
@@ -61,9 +65,11 @@ public class Tiempo {
         return horas+"h "+minutos+"m "+segundos+"s ";
     }
     public static void main(String[] args) {
-        Tiempo t1=new Tiempo(3, 58, 62);
-        Tiempo t2=new Tiempo(3, 1, 61);
+        Tiempo t1=new Tiempo(3, 58, 1);
+        Tiempo t2=new Tiempo(3, 1, 1);
         Tiempo t3=new Tiempo(0, 0, 0);
+
+        System.out.println(t1);
 
         t3.suma(t1, t2);
         System.out.println(t3);
