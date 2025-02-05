@@ -57,6 +57,9 @@ public class Tiempo {
             } while (this.minutos<0);
         }
         this.horas=t1.horas-t2.horas-this.horas;
+        if (this.horas<0) {
+            this.horas=0;
+        }
     }
     
 
@@ -65,7 +68,7 @@ public class Tiempo {
         return horas+"h "+minutos+"m "+segundos+"s ";
     }
     public static void main(String[] args) {
-        Tiempo t1=new Tiempo(3, 58, 1);
+        Tiempo t1=new Tiempo(2, 58, 1);
         Tiempo t2=new Tiempo(3, 1, 1);
         Tiempo t3=new Tiempo(0, 0, 0);
 
