@@ -1,26 +1,24 @@
 class Rectangulo {
-    // Sin modificador “public” para que sólo sea accesible desde el paquete
-        // Atributos de clase
-        private static int numRectangulos; // Número total de rectángulos creados
-        public static final String nombreFigura= "Rectángulo"; // Nombre de la clase
-        public static final double PI= 3.1416; // Constante PI
-        // Atributos de objeto
-        private String nombre; // Nombre del rectángulo
-        public double x1, y1; // Vértice inferior izquierdo
-        public double x2, y2; // Vértice superior derecho
+    int base, altura;
+    static int rtotal;
 
-        //Métodos
-        int getNumRectangulos(){
-            return numRectangulos;
+    Rectangulo (int b, int a){
+        base=b;
+        altura=a;
+    }
+
+    int getRectangulosCrados(){
+        return rtotal;
+    }
+
+    void montarRectangulo(){
+        for (int i=0; i<altura;i++){
+            for (int p=0; i<base; p++){
+                System.out.print('*');
+            }
+            System.out.println();
         }
+    }
 
-        String getNombreFigura(){
-            return nombreFigura;
-        }
 
-        double getPI(){
-            return PI;
-        }
-
-        
 }
