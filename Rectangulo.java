@@ -1,24 +1,13 @@
 class Rectangulo {
-    int base, altura;
-    static int rtotal;
+    int base,altura;
 
-    Rectangulo (int b, int a){
+    Rectangulo (int b, int h){
         base=b;
-        altura=a;
+        altura=h;
     }
 
-    int getRectangulosCrados(){
-        return rtotal;
+    for (int i=0; i<altura;i++){
+        for (int p=0; p<base)
     }
-
-    void montarRectangulo(){
-        for (int i=0; i<altura;i++){
-            for (int p=0; i<base; p++){
-                System.out.print('*');
-            }
-            System.out.println();
-        }
-    }
-
-
+        
 }
