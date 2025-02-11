@@ -23,11 +23,6 @@ public class CrearAutobus {
             autobus[i]= new Autobus(m, model, CV, NP);
             autobus[i].display();
         }
-        
-        for (int i=0;i<autobus.length;i++){
-            System.out.println(autobus[i]);
-        }
-
         scanner.close();
     }
 }
