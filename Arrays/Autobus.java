@@ -5,20 +5,11 @@ public class Autobus {
     float potenciaCV;
     int numeroPlazas;
 
-    void setNumeroPlazas (int vNP) {
-        numeroPlazas=vNP;
-    }
-
-    void setMatricula(String m){
+    Autobus (String m, String model, float CV, int NP){
         matricula=m;
-    }
-    
-    void setModelo(String model){
         modelo=model;
-    }
-
-    void setpotenciaCV (float CV){
         potenciaCV=CV;
+        numeroPlazas=NP;
     }
 
     String getmatricula () {
@@ -35,5 +26,9 @@ public class Autobus {
 
     int getNumeroPlazas () {
         return numeroPlazas;
+    }
+
+    public void display(){
+        System.out.println("La matricula es: "+this.matricula+" El modelo es: "+this.modelo+" La potencia de CV es: "+this.potenciaCV+" El número de plazas es: "+this.numeroPlazas);
     }
 }
