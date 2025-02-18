@@ -10,5 +10,7 @@ public class Prueba {
         prueba1.almacena(art1);
         prueba1.almacena(art2);
         prueba1.almacena(art3);
+
+        System.out.println(prueba1);
 }
 }
