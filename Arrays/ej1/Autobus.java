@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.ej1;
 
 public class Autobus {
     String matricula, modelo;

@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays.ej1;
 import java.util.Scanner;
 
 public class CrearAutobus {
